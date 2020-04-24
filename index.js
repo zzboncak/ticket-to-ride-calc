@@ -1,6 +1,4 @@
-let totalScore = 0;
-
-document.getElementById('total-score').innerText = totalScore;
+let routesHistory = [];
 
 const routes = [
     {length: 1, score: 1},
@@ -11,9 +9,40 @@ const routes = [
     {length: 6, score: 15}
 ];
 
-routes.map(route => {
-    document.getElementById(`button${route.length}`).addEventListener('click', () => {
-        totalScore = totalScore += route.score;
-        document.getElementById('total-score').innerText = totalScore;
+function displayScore() {
+    document.getElementById('total-score').innerText = routesHistory.reduce((a, b) => a + b, 0);
+}
+
+function updateRouteHistory(score) {
+    document.getElementById('routes-history').innerHTML += `<span>${score} </span>`;
+}
+
+function undoRoute() {
+    routesHistory.pop();
+    let spans = document.getElementById('routes-history');
+    spans.removeChild(spans.childNodes[spans.childNodes.length - 1]);
+    displayScore();
+}
+
+function generateButtonListeners() {
+    routes.forEach(route => {
+        document.getElementById(`button${route.length}`).addEventListener('click', () => {
+            routesHistory.push(route.score);
+            let position = routesHistory.length - 1;
+            displayScore();
+            updateRouteHistory(route.score, position);
+        });
     });
-});
+
+    document.getElementById('clear').addEventListener('click', () => {
+        routesHistory = [];
+        document.getElementById('routes-history').innerHTML = ``;
+        displayScore();
+    });
+
+    document.getElementById('go-back').addEventListener('click', () => {
+        undoRoute();
+    })
+}
+
+generateButtonListeners();

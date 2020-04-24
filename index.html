@@ -11,21 +11,27 @@
         <h1 class="hero-title">Ticket to Ride Calculator</h1>
         <section class="score-view">
             <h2>Total Score: </h2>
-            <span class="total-score" id="total-score"></span>
+            <span class="total-score" id="total-score">0</span>
         </section>
+
+        <section id="routes-history"></section>
 
         <section class="calculator">
             <div class="top-row">
-                <button id="button1">1</button>
-                <button id="button2">2</button>
-                <button id="button3">3</button>
+                <button id="button1" class="calc-button">1</button>
+                <button id="button2" class="calc-button">2</button>
+                <button id="button3" class="calc-button">3</button>
             </div>
             <div class="bottom-row">
-                <button id="button4">4</button>
-                <button id="button5">5</button>
-                <button id="button6">6</button>
+                <button id="button4" class="calc-button">4</button>
+                <button id="button5" class="calc-button">5</button>
+                <button id="button6" class="calc-button">6</button>
             </div>
         </section>
+
+        <button id="clear">Clear Score</button>
+
+        <button id="go-back">Undo</button>
         
         <script src="index.js"></script>
     </body>
