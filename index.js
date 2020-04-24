@@ -14,7 +14,7 @@ function displayScore() {
 }
 
 function updateRouteHistory(score) {
-    document.getElementById('routes-history').innerHTML += `<span>${score} </span>`;
+    document.getElementById('routes-history').innerHTML += `<span class="route">${score} </span>`;
 }
 
 function undoRoute() {

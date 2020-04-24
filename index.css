@@ -19,6 +19,32 @@
     font-size: 30px;
 }
 
+#routes-history {
+    margin-top: 20px;
+}
+
+.route {
+    font-size: 24px;
+    margin: 10px;
+}
+
+.edit-buttons {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    bottom: 220px;
+}
+
+.edit-buttons > button {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+}
+
 .calculator {
     position: absolute;
     bottom: 0;
@@ -31,7 +57,7 @@
     margin-top: 5px;
 }
 
-button {
+.calc-button {
     width: 32%;
     height: 100px;
     font-size: 24px;
@@ -39,4 +65,5 @@ button {
 
 button:hover {
     background-color: orange;
+    cursor: pointer;
 }
